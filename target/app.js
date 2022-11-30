@@ -22,8 +22,12 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const utils = __importStar(require("./lib/utilityFunctions"));
+const constMethodsInline_1 = __importDefault(require("./constMethodsInline"));
 function PrintBookInfo({ title: bookTitle, author: bookAuthor }) {
     console.log(`title: ${bookTitle} was written by ${bookAuthor}`);
 }
@@ -38,38 +42,13 @@ function PrintBookfn([b1, b2, ...restOfTheBooks]) {
 // PrintBookfn(utils.GetAllBooks());
 let { title, author } = b1;
 let item = ["A 123.456", b1];
-console.log(item);
-console.log(item[0]);
-console.log(item[1]);
+// console.log(item);
+// console.log(item[0]);
+// console.log(item[1]);
 let arr = [
     ["", 123],
     ["", 123],
     ["", 123],
 ];
-// A simple enum with names of the days of week.
-var Weekdays;
-(function (Weekdays) {
-    Weekdays[Weekdays["Monday"] = 0] = "Monday";
-    Weekdays[Weekdays["Tuesday"] = 1] = "Tuesday";
-    Weekdays[Weekdays["Wednesday"] = 2] = "Wednesday";
-    Weekdays[Weekdays["Thursday"] = 3] = "Thursday";
-    Weekdays[Weekdays["Friday"] = 4] = "Friday";
-    Weekdays[Weekdays["Saturday"] = 5] = "Saturday";
-    Weekdays[Weekdays["Sunday"] = 6] = "Sunday";
-})(Weekdays || (Weekdays = {}));
-;
-// Gets a weekday for Canadian office. It returns whatever "getWeekDay" method returns defined in WeekDaysService type.
-const getCanadianWeekDay = (date) => {
-    if (date.getDay() === 5) {
-        return Weekdays.Friday;
-    }
-    if (date.getDay() === 6) {
-        return Weekdays.Saturday;
-    }
-    return Weekdays.Sunday;
-};
-// A method that gets an array of dates for a middle east country.
-const getBankHoliday = (year) => {
-    return new Array();
-};
+(0, constMethodsInline_1.default)();
 //# sourceMappingURL=app.js.map
