@@ -42,3 +42,21 @@ let arr: Array<KeyValuePair<string, number>> = [
 ];
 
 ExecuteMessageProcessing();
+
+
+/**
+ * Type union or using | to tell the compiler that the object could be either one of the other type. Books or Magazine type.
+ */
+const readingMaterial : Book[] | Magazine[] = utils.GetAllMagazines();
+
+/**
+ * Type intersection or using '&' to add types means adding all properties of both the types. Books + Magazine.
+ */
+const serialNovel: Book & Magazine = {
+    author: "",
+    category : Category.Biography,
+    available: false,
+    publisher: "",
+    id: 123,
+    title : "sdfsdf"
+};
