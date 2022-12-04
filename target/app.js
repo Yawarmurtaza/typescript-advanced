@@ -26,8 +26,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const enums_1 = require("./enums");
 const utils = __importStar(require("./lib/utilityFunctions"));
 const constMethodsInline_1 = __importDefault(require("./constMethodsInline"));
+const PolymorphicTypeThis_1 = __importDefault(require("./PolymorphicTypeThis"));
 function PrintBookInfo({ title: bookTitle, author: bookAuthor }) {
     console.log(`title: ${bookTitle} was written by ${bookAuthor}`);
 }
@@ -51,4 +53,20 @@ let arr = [
     ["", 123],
 ];
 (0, constMethodsInline_1.default)();
+/**
+ * Type union or using | to tell the compiler that the object could be either one of the other type. Books or Magazine type.
+ */
+const readingMaterial = utils.GetAllMagazines();
+/**
+ * Type intersection or using '&' to add types means adding all properties of both the types. Books + Magazine.
+ */
+const serialNovel = {
+    author: "",
+    category: enums_1.Category.Biography,
+    available: false,
+    publisher: "",
+    id: 123,
+    title: "sdfsdf"
+};
+(0, PolymorphicTypeThis_1.default)();
 //# sourceMappingURL=app.js.map

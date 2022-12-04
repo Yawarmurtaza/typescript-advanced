@@ -3,6 +3,7 @@ import { Book, Logger, Author, Librarian, Magazine } from "./interfaces";
 import { UniversityLibrarian, ReferenceItem } from "./classes";
 import * as utils from "./lib/utilityFunctions";
 import ExecuteMessageProcessing from "./constMethodsInline";
+import polymorphicRunner from "./PolymorphicTypeThis";
 
 function PrintBookInfo({ title: bookTitle, author: bookAuthor }: Book): void {
     console.log(`title: ${bookTitle} was written by ${bookAuthor}`);
@@ -47,16 +48,18 @@ ExecuteMessageProcessing();
 /**
  * Type union or using | to tell the compiler that the object could be either one of the other type. Books or Magazine type.
  */
-const readingMaterial : Book[] | Magazine[] = utils.GetAllMagazines();
+const readingMaterial: Book[] | Magazine[] = utils.GetAllMagazines();
 
 /**
  * Type intersection or using '&' to add types means adding all properties of both the types. Books + Magazine.
  */
 const serialNovel: Book & Magazine = {
     author: "",
-    category : Category.Biography,
+    category: Category.Biography,
     available: false,
     publisher: "",
     id: 123,
-    title : "sdfsdf"
+    title: "sdfsdf"
 };
+
+polymorphicRunner();
