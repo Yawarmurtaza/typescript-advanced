@@ -33,7 +33,7 @@ class HistoryBook  extends Library {
     Rewrite(book: Book) : this {
         console.log(`The history in ${book.title} has been rewritten.`);
         return this;
-    }
+    } 
 }
 
 export const polymorphicRunner = (): void => {

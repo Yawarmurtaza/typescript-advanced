@@ -1,9 +1,12 @@
 import { Category } from "./enums";
 import { Book, Logger, Author, Librarian, Magazine } from "./interfaces";
-import { UniversityLibrarian, ReferenceItem } from "./classes";
+import { UniversityLibrarian, ReferenceItem, MyLibrary } from "./classes";
 import * as utils from "./lib/utilityFunctions";
 import ExecuteMessageProcessing from "./constMethodsInline";
 import polymorphicRunner from "./PolymorphicTypeThis";
+// import './interfaceMerging';
+import runner from "./asyncPatterns/async-patterns-runner";
+import getApiRunner from './asyncPatterns/getRandomUserDataApi';
 
 function PrintBookInfo({ title: bookTitle, author: bookAuthor }: Book): void {
     console.log(`title: ${bookTitle} was written by ${bookAuthor}`);
@@ -42,7 +45,7 @@ let arr: Array<KeyValuePair<string, number>> = [
     ["", 123],
 ];
 
-ExecuteMessageProcessing();
+
 
 
 /**
@@ -62,4 +65,39 @@ const serialNovel: Book & Magazine = {
     title: "sdfsdf"
 };
 
+/*
+
+ExecuteMessageProcessing();
+
 polymorphicRunner();
+
+let newLibrrarian = new UniversityLibrarian();
+newLibrrarian.phone = "7784887110";
+newLibrrarian.hostSeminar("Pakistan History");
+
+
+let s1 : string = "name";
+let s2 : string = "name";
+console.log(`string: ${s1} === ${s2} = ${s1 === s2}`);
+
+let symbol1 = Symbol("symbol_1"); // symbol1.toString() = symbol description i.e: symbol_1
+let symbol2 = Symbol("symbol_1");
+console.log(`Symbol: ${symbol1.toString()} === ${symbol2.toString()} = ${symbol1 === symbol2}`);
+
+// uisng symbol
+
+let obj = {
+    [symbol1] : "value of my symbol key"
+};
+
+console.log(`obj[symbol1] = ${obj[symbol1]}`);
+
+
+
+console.log("----------------[ Decorator ]----------------")
+let lib1 = new UniversityLibrarian();
+let myLib = new MyLibrary();
+*/
+
+// runner();
+getApiRunner();

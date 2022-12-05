@@ -28,8 +28,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const enums_1 = require("./enums");
 const utils = __importStar(require("./lib/utilityFunctions"));
-const constMethodsInline_1 = __importDefault(require("./constMethodsInline"));
-const PolymorphicTypeThis_1 = __importDefault(require("./PolymorphicTypeThis"));
+const getRandomUserDataApi_1 = __importDefault(require("./asyncPatterns/getRandomUserDataApi"));
 function PrintBookInfo({ title: bookTitle, author: bookAuthor }) {
     console.log(`title: ${bookTitle} was written by ${bookAuthor}`);
 }
@@ -52,7 +51,6 @@ let arr = [
     ["", 123],
     ["", 123],
 ];
-(0, constMethodsInline_1.default)();
 /**
  * Type union or using | to tell the compiler that the object could be either one of the other type. Books or Magazine type.
  */
@@ -68,5 +66,39 @@ const serialNovel = {
     id: 123,
     title: "sdfsdf"
 };
-(0, PolymorphicTypeThis_1.default)();
+/*
+
+ExecuteMessageProcessing();
+
+polymorphicRunner();
+
+let newLibrrarian = new UniversityLibrarian();
+newLibrrarian.phone = "7784887110";
+newLibrrarian.hostSeminar("Pakistan History");
+
+
+let s1 : string = "name";
+let s2 : string = "name";
+console.log(`string: ${s1} === ${s2} = ${s1 === s2}`);
+
+let symbol1 = Symbol("symbol_1"); // symbol1.toString() = symbol description i.e: symbol_1
+let symbol2 = Symbol("symbol_1");
+console.log(`Symbol: ${symbol1.toString()} === ${symbol2.toString()} = ${symbol1 === symbol2}`);
+
+// uisng symbol
+
+let obj = {
+    [symbol1] : "value of my symbol key"
+};
+
+console.log(`obj[symbol1] = ${obj[symbol1]}`);
+
+
+
+console.log("----------------[ Decorator ]----------------")
+let lib1 = new UniversityLibrarian();
+let myLib = new MyLibrary();
+*/
+// runner();
+(0, getRandomUserDataApi_1.default)();
 //# sourceMappingURL=app.js.map

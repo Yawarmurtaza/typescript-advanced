@@ -1,5 +1,8 @@
 import * as Interfaces from './interfaces';
+import {sealed, logger} from './decorators';
 
+@logger
+@sealed("Yawar")
 class UniversityLibrarian implements Interfaces.Librarian {
     
     name: string = "";
@@ -10,6 +13,7 @@ class UniversityLibrarian implements Interfaces.Librarian {
         console.log(this.name + ' is assisting ' + custName);
     }
 }
+
 
 abstract class ReferenceItem {
     
@@ -36,4 +40,9 @@ abstract class ReferenceItem {
     abstract printCitation(): void;
 }
 
-export { UniversityLibrarian, ReferenceItem };
+@logger
+class MyLibrary {
+    numberOfBooks: number = 0;
+}
+
+export { UniversityLibrarian, ReferenceItem, MyLibrary };
